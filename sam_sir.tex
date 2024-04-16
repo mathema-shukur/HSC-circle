@@ -1,0 +1,12 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+	\draw[thick, <->] (-3,0) -- (3,0);
+	\draw[thick, <->] (0,-3) -- (0,4);
+	\draw (-3,4) parabola bend (0,-.5) (3,4);
+\end{tikzpicture}
+
+\end{document}

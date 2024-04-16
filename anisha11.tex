@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{tikz}
+\begin{document}
+	
+	
+
+\begin{tikzpicture}[transform shape,scale=1]
+	\draw[thick,green] (1,-2) circle (6);
+	\fill[green] (1,-2) circle (1 mm);
+	\draw[thick,blue] (-2,2) circle (1);
+	\fill[blue] (-2,2) circle (1 mm);
+	\draw[red](-5,1)--(-1,4);	
+	\draw[red](1,-2)--(-2,2);	
+	\draw[red,dashed](-3.5,4)--(-2,2);	
+	\node at (1,-2.5) {$\textcolor{red}{C_1}$};		
+	\node at (-1.5,2) {$\textcolor{red}{C_2}$};	
+	\node at (-2.5,3) {$\textcolor{red}{P}$};		
+\end{tikzpicture}\\
+\\
+\begin{tikzpicture}[transform shape,scale=1]
+	\draw[dashed,red] (0,0) circle (5);
+	
+	\draw[green] (1,1)--(-4,2)--(6,1)--(1,1);
+\end{tikzpicture}\\
+\begin{tikzpicture}[transform shape,scale=1]
+	\draw[dashed,red] (-2,-2) circle (3);
+\end{tikzpicture}\\
+
+	
+\end{document}

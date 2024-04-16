@@ -1,0 +1,612 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[a4paper,inner=1.5cm,outer=1.5cm,top=2cm,bottom=0.5cm]{geometry} 
+\usepackage{xcolor}                    
+\usepackage{tikz}                           
+\usepackage{multicol}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+\usetikzlibrary{intersections,calc,angles,quotes}
+\usetikzlibrary{shapes,arrows,positioning,decorations.pathreplacing,calc}
+\usetikzlibrary{calc,angles,positioning,intersections,quotes,decorations.markings}
+\usepackage{tkz-euclide}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc,through}
+\usetikzlibrary{angles}
+\usetikzlibrary{fadings}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.symbols}
+\usepackage{draftwatermark}
+\usepackage{mathptmx}
+
+\SetWatermarkText{\textcolor{black!20}{Mathema Shukur}}
+\SetWatermarkFontSize{2 cm}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+
+\setmainfont{[Kalpurush.ttf]}
+\newfontface{\en}{[Arial.ttf]} %%this is optional, if you want to use a secondary font. Any english font is supported
+\newlength\Radius
+\setlength\Radius{4cm}
+\begin{document} 
+	\Large
+	\textcolor{red}{Welcome To} 
+	\\
+	\begin{tikzpicture}
+		\tikz \node [fill=blue!20,star,star points=6,draw] {Mathema Shukur };
+	\end{tikzpicture}
+	\\
+	যাদের জন্যে প্রযোজ্যঃ  	\textcolor{magenta}{একাদশ ও দ্বাদশ শ্রেণীর শিক্ষার্থী} \\
+	বিষয়ঃ \textcolor{magenta}{উচ্চতর গণিত ১ম পত্র} \\
+	অধ্যায়ঃ \textcolor{magenta}{৪-বৃত্ত}\\ 
+	\\
+	\\
+	শিখন ফলঃ\\
+	(১) কেন্দ্র মূল বিন্দু বিশিষ্ট বৃত্তের সমীকরণ শনাক্ত করতে পারবে। \\
+	\\
+	(২)  কেন্দ্র মূল বিন্দু বিশিষ্ট বৃত্তের সমীকরণ অংকন ও অক্ষদ্বয়ের সাথে ছেদ বিন্দু নির্ধারণ করতে পারবে। \\
+	\\
+	(৩) নির্দিষ্ট কেন্দ্র ও ব্যাসার্ধ বিশিষ্ট বৃত্তের  সমীকরণ নির্ণয় করতে পারবে। \\
+	\\
+	(৪) পোলার স্থানাঙ্কে বৃত্তের  সমীকরণ নির্ণয় করতে পারবে। \\
+	\\
+	(৫) বৃত্তস্থ কোনো বিন্দুতে স্পর্শক ও অভিলম্বের সমীকরণ নির্ণয় করতে পারবে\\ 
+	\\
+	(৬) বৃত্তের বহিঃস্থ কোনো বিন্দু থেকে অঙ্কিত স্পর্শকের সমীকরণ নির্ণয় করতে পারবে\\
+	\\
+	(৭) বৃত্তের বহিঃস্থ কোনো বিন্দু থেকে অঙ্কিত স্পর্শকের দৈর্ঘ্য নির্ণয় করতে পারবে\\
+	\\
+	(৮) দুইটি বৃত্তের সাধারণ জ্যা এর সমীকরণ নির্ণয় করতে পারবে\\ 
+	\\ 
+	\vspace{4cm}
+	\\ 
+		বৃত্তের সাধারণ সমীকরণ \\
+	$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+	\\ 
+	কেন্দ্র $(-g,-f)$  ও ব্যাসার্ধ $r=\sqrt{g^2+f^2-c}$  বিশিষ্ট বৃত্তের চিত্র \\ 
+	\begin{tikzpicture}[transform shape,scale=1]
+		\fill[black] (0,0) circle (1 mm);
+		\node at (0.8,-0.3) {$\textcolor{red}{C(-g,-f)}$};	
+		\draw[thick,blue] (0,0) circle (4);
+		\draw[dashed,red] (0,0)--(2.8,2.8);
+		\node at (3.2,3.2) {$\textcolor{blue}{A(x,y)}$};	
+		\fill[blue] (2.85,2.85) circle (1 mm);
+		\node at (-0.8,1.5) {$\textcolor{red}{r=\sqrt{g^2+f^2-c}}$};		
+	\end{tikzpicture}\\
+\\	
+বৃত্তের সাধারণ সমীকরণ \\
+$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+\\ 
+বৃত্তটি দ্বারা $x-$ অক্ষের খন্ডিত  অংশের দৈর্ঘ্যের পরিমান  $2\sqrt{g^2-c}$\\ 
+	\begin{tikzpicture}[transform shape,scale=1]
+	\draw [-latex,thick,red](-10,0) -- (2,0) node[right] {$x$} coordinate(x axis);
+	\draw [-latex,thick,red](0,-10) -- (0,2) node[above] {$y$} coordinate(y axis);
+	\fill[black] (0,0) circle (1 mm);
+	\node at (0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+	\draw[thick,blue] (-5,-3) circle (4);
+	\fill[blue] (-5,-3) circle (1 mm);
+	\node at (-5,-3.7) {$\textcolor{blue}{(-g,-f)}$};
+	\draw [cyan,very thick,decorate,decoration={brace,amplitude=12pt,mirror,raise=1ex}]
+	(-7.5,0) -- (-2.5,0);
+	\node at (-5,-1.3) {$\textcolor{cyan}{2\sqrt{g^2-c} }$};	
+\end{tikzpicture}\\
+	\\ 
+বৃত্তের সাধারণ সমীকরণ \\
+$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+\\ 
+বৃত্তটি দ্বারা $y-$ অক্ষের খন্ডিত  অংশের দৈর্ঘ্যের পরিমান  $2\sqrt{f^2-c}$\\ 
+	\begin{tikzpicture}[transform shape,scale=1]
+	\draw [-latex,thick,red](-3,0) -- (10,0) node[right] {$x$} coordinate(x axis);
+	\draw [-latex,thick,red](0,1) -- (0,-12) node[above] {$y$} coordinate(y axis);
+	\fill[black] (0,0) circle (1 mm);
+	\node at (0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+	\draw[thick,blue] (4,-6) circle (5);
+	\fill[blue] (4,-6) circle (1 mm);
+	\node at (4,-6.5) {$\textcolor{blue}{(-g,-f)}$};
+	\draw [cyan,very thick,decorate,decoration={brace,amplitude=12pt,mirror,raise=1ex}]
+	(0,-9) -- (0,-3);
+	\node at (1.8,-5) {$\textcolor{cyan}{2\sqrt{f^2-c} }$};	
+\end{tikzpicture}\\
+	\\ 
+বৃত্তের সাধারণ সমীকরণ \\
+$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+\\ 
+বৃত্তটি  $x-$ অক্ষকে  স্পর্শ করলে  $g^2=c$\\ 
+	\begin{tikzpicture}[transform shape,scale=1]
+	\draw [-latex,thick,red](-2,0) -- (10,0) node[right] {$x$} coordinate(x axis);
+	\draw [-latex,thick,red](0,2) -- (0,-5) node[above] {$y$} coordinate(y axis);
+	\fill[black] (0,0) circle (1 mm);
+	\node at (0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+	\draw[thick,blue] (6,-2) circle (2);
+	\fill[blue] (6,-2) circle (1 mm);
+	\node at (6,-2.5) {$\textcolor{blue}{(-g,-f)}$};
+	\node at (6,-1) {$\textcolor{magenta}{g^2=c}$};
+\end{tikzpicture}\\
+	\\ 
+বৃত্তের সাধারণ সমীকরণ \\
+$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+\\
+বৃত্তটি  $y-$ অক্ষকে  স্পর্শ করলে  $f^2=c$\\ 
+	\begin{tikzpicture}[transform shape,scale=1]
+		\draw [-latex,thick,red](-6,0) -- (6,0) node[right] {$x$} coordinate(x axis);
+		\draw [-latex,thick,red](0,-6) -- (0,6) node[above] {$y$} coordinate(y axis);
+		\fill[black] (0,0) circle (1 mm);
+		\node at (0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+		\draw[thick,blue] (-2,3) circle (2);
+		\fill[blue] (-2,3) circle (1 mm);
+		\node at (-2,2.5) {$\textcolor{blue}{(-g,-f)}$};
+		\node at (1,2.5) {$\textcolor{magenta}{f^2=c}$};
+	\end{tikzpicture}\\
+			\\ 
+		বৃত্তের সাধারণ সমীকরণ \\
+		$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+		\\ 
+		বৃত্তটি উভয় অক্ষকে স্পর্শ করলে $g^2=f^2=c$\\
+	\begin{tikzpicture}[transform shape,scale=1]
+		\draw [-latex,thick,red](-2,0) -- (5,0) node[right] {$x$} coordinate(x axis);
+		\draw [-latex,thick,red](0,-2) -- (0,5) node[above] {$y$} coordinate(y axis);
+		\fill[black] (0,0) circle (1 mm);
+		\node at (0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+		\draw[thick,blue] (2,2) circle (2);
+		\fill[blue] (2,2) circle (1 mm);
+		\node at (2,2.5) {$\textcolor{blue}{(-g,-f)}$};
+			\node at (-2,2.5) {$\textcolor{cyan}{g^2=f^2=c}$};
+	\end{tikzpicture}\\
+		\\ 
+	বৃত্তের সাধারণ সমীকরণ \\
+	$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+	\\ 
+	$c=0$ হলে বৃত্তটি মূল বিন্দু দিয়ে যাবে\\ 
+\begin{tikzpicture}[transform shape,scale=1]
+	\draw [-latex,thick,red](-2,0) -- (10,0) node[right] {$x$} coordinate(x axis);
+	\draw [-latex,thick,red](0,-2) -- (0,8) node[above] {$y$} coordinate(y axis);
+	\fill[black] (0,0) circle (1 mm);
+	\node at (-0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+	\draw[thick,blue] (4,3) circle (5);
+	\fill[blue] (4,3) circle (1 mm);
+	\node at (4,3.5) {$\textcolor{blue}{(-g,-f)}$};
+	\node at (1,1) {$\textcolor{cyan}{c=0}$};
+\end{tikzpicture}\\
+	\\ 
+বৃত্তের সাধারণ সমীকরণ \\
+$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+\\ 
+$f=0$ হলে বৃত্তের কেন্দ্র $x-$ অক্ষের উপর অবস্থিত হয় \\ 
+\begin{tikzpicture}[transform shape,scale=1]
+	\draw [-latex,thick,red](-3,0) -- (6,0) node[right] {$x$} coordinate(x axis);
+	\draw [-latex,thick,red](0,-3) -- (0,3) node[above] {$y$} coordinate(y axis);
+	\fill[black] (0,0) circle (1 mm);
+	\node at (0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+	\draw[thick,blue] (2,0) circle (3);
+	\fill[blue] (2,0) circle (1 mm);
+	\node at (2.8,-0.5) {$\textcolor{blue}{(-g,0)}$};
+	\node at (-2,2.5) {$\textcolor{cyan}{f=0}$};
+\end{tikzpicture}\\
+	\\ 
+	\vspace{5cm}
+	\\
+বৃত্তের সাধারণ সমীকরণ \\
+$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+\\ 
+$g=0$ হলে বৃত্তের কেন্দ্র $y-$ অক্ষের উপর অবস্থিত হয় \\ 
+\begin{tikzpicture}[transform shape,scale=1]
+	\draw [-latex,thick,red](-5,0) -- (5,0) node[right] {$x$} coordinate(x axis);
+	\draw [-latex,thick,red](0,-2) -- (0,6) node[above] {$y$} coordinate(y axis);
+	\fill[black] (0,0) circle (1 mm);
+	\node at (0.8,-0.3) {$\textcolor{red}{O(0,0)}$};	
+	\draw[thick,blue] (0,2) circle (3);
+	\fill[blue] (0,2) circle (1 mm);
+	\node at (1,2) {$\textcolor{blue}{(0,-f)}$};
+	\node at (-2,2.5) {$\textcolor{cyan}{g=0}$};
+\end{tikzpicture}
+\\
+\textcolor{blue}{[ঢাকা বিশ্ববিদ্যালয় ভর্তি পরীক্ষা -২০১৪-২০১৫]}\\
+$kx^2+2y^2-4x-12y+11=0$ সমীকরণটি বৃত্ত নির্দেশ করলে k এর মান কত ? \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+(i) এটি $x$, $y$ যুক্ত একটি দ্বিঘাত বহুপদী সমীকরণ \\
+(ii) $x^2$ এবং $y^2$ এর সহগ সমান\\
+\\
+$x^2$ এর সহগ  $=k$\\
+\\
+$y^2$ এর সহগ  $=2$\\
+\\
+সুতরাং $k=2$\\
+\\ 
+\textcolor{blue}{[KUET-2011-2012]}\\
+k এর কোন মানের জন্য  $(x-y+3)^2+(kx+2)(y-1)=0$ সমীকরণটি একটি বৃত্ত নির্দেশ করে। \\ 
+\\ 
+\begin{align*}
+(x-y+3)^2+(kx+2)(y-1)&=0\\
+\\
+x^2+(-y)^2+3^2+2x(-y)+2(-y)3+2(3)x+kxy-kx+2y-2&=0\\
+\\
+x^2+y^2+9-2xy-6y+6x+kxy-kx+2y-2&=0\\
+\\
+x^2+y^2+(k-2)xy+(6-k)x-4y+7&=0
+\end{align*}
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+ $xy$ যুক্ত পদটি অনুপস্থিত। \\
+ \\
+ সুতরাং $k-2=0$\\
+ $k=2$\\
+ \\
+\textcolor{blue}{[কুমিল্লা বোর্ড-২০২২]}\\
+$ax^2+by^2=c$ সমীকরণটি একটি বৃত্ত নির্দেশ করলে $a$ ও $b$ এর মধ্যে সম্পর্ক কী হবে ?  \\
+\\ 
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+(i) এটি $x$, $y$ যুক্ত একটি দ্বিঘাত বহুপদী সমীকরণ \\
+(ii) $x^2$ এবং $y^2$ এর সহগ সমান\\
+\\
+\\
+$x^2$ এর সহগ  $=a$\\
+\\
+$y^2$ এর সহগ  $=b$\\
+\\
+সুতরাং $a=b$\\
+\\ 
+\textcolor{blue}{[কুমিল্লা বোর্ড-২০২২]}\\
+$2x^2+2y^2+4x-2y+4=0$ বৃত্তের কেন্দ্র নির্ণয় কর \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্তের কেন্দ্র \boxed{\textcolor{blue}{(-g,-f)}}\\
+\\
+\begin{align*}
+2x^2+2y^2+4x-2y+4&=0\\
+\\
+x^2+y^2+2x-y+2&=0\\
+[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+x^2+y^2+2(1)x+2\left(-\frac{1}{2}\right)y+2&=0\\
+\\
+g=1,\,\,f=\left(-\frac{1}{2}\right)&
+\end{align*}
+\\
+বৃত্তের কেন্দ্র $(-g,-f)=\left(-1,-\left(-\frac{1}{2}\right)\right)=\left(-1,\frac{1}{2}\right)$\\
+\\
+\textcolor{blue}{[ঢাকা বিশ্ববিদ্যালয় ভর্তি পরীক্ষা -২০১৮-২০১৯]}\\
+$3x^2+3y^2-5x-6y+4=0$ বৃত্তের কেন্দ্র নির্ণয় কর \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্তের কেন্দ্র \boxed{\textcolor{blue}{(-g,-f)}}\\
+\\
+\begin{align*}
+3x^2+3y^2-5x-6y+4&=0\\
+	\\
+	x^2+y^2-\frac{5}{3}x-2y+\frac{4}{3}&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2\left(-\frac{5}{6}\right)x+2\left(-1\right)y+\frac{4}{3}&=0\\
+	\\
+	g=\left(-\frac{5}{6}\right),\,\,f=\left(-1\right)&
+\end{align*}
+\\
+বৃত্তের কেন্দ্র $(-g,-f)=\left(-\left(-\frac{5}{6}\right),-\left(-1\right)\right)=\left(\frac{5}{6},1\right)$\\
+\\
+\textcolor{blue}{[ চট্রগ্রাম বিশ্ববিদ্যালয় ভর্তি পরীক্ষা -২০১৪-২০১৫]}\\
+$x^2+y^2-24x+10y=0$ বৃত্তের ব্যাসার্ধ নির্ণয় কর \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্তের ব্যাসার্ধ \boxed{ \textcolor{blue}{=\sqrt{g^2+f^2-c}}}\\
+\\
+\begin{align*}
+	x^2+y^2-24x+10y&=0\\
+	\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2(-12)x+2(5)y+0&=0\\
+	\\
+	g=\left(-12\right),\,\,f=\left(5\right)&\,\,\,c=0
+\end{align*}
+\\
+বৃত্তের ব্যাসার্ধ  $=\sqrt{g^2+f^2-c}=\sqrt{(-12)^2+(5)^2-0}= 13=13$\\
+\\
+\textcolor{blue}{[ নোয়াখালী বিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয় ভর্তি পরীক্ষা -২০১৭-২০১৮]}\\
+$2x^2+2y^2-4x-12y+11=0$ বৃত্তের ব্যাসার্ধ নির্ণয় কর \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+	বৃত্তের ব্যাসার্ধ \boxed{ \textcolor{blue}{=\sqrt{g^2+f^2-c}}}\\
+\\
+\begin{align*}
+2x^2+2y^2-4x-12y+11&=0\\
+\\
+x^2+y^2-2x-6y+\frac{11}{2}&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2(-1)x+2(-3)y+\frac{11}{2}&=0\\
+	\\
+	g=\left(-1\right),\,\,f=\left(-3\right)&\,\,\,c=\frac{11}{2}
+\end{align*}
+\\
+বৃত্তের ব্যাসার্ধ  $=\sqrt{g^2+f^2-c}=\sqrt{(-1)^2+(-3)^2-\frac{11}{2}}= \sqrt{1+9-\frac{11}{2}}=\sqrt{\frac{9}{2}}=\frac{3}{\sqrt{2}}$\\
+\\
+\textcolor{blue}{[দিনাজপুর বোর্ড-২০২২]}\\
+$3x^2+3y^2-6x+4y-1=0$ বৃত্তের কেন্দ্র নির্ণয় কর \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্তের কেন্দ্র \boxed{\textcolor{blue}{(-g,-f)}}\\
+\\
+\begin{align*}
+3x^2+3y^2-6x+4y-1&=0\
+	\\
+	x^2+y^2-2x+\frac{4}{3}y-\frac{1}{3}&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2(-1)x+2\left(\frac{2}{3}\right)y-\frac{1}{3}&=0\\
+	\\
+	g=(-1),\,\,f=\left(\frac{2}{3}\right)&
+\end{align*}
+\\
+বৃত্তের কেন্দ্র $(-g,-f)=\left(-(-1),-\left(\frac{2}{3}\right)\right)=\left(1,-\frac{2}{3}\right)$\\
+\\
+\textcolor{blue}{[ঢাকা বোর্ড-২০২২]}\\
+$x^2+y^2-6x+8y+9=0$ বৃত্ত দ্বারা $y-$  অক্ষের খন্ডিত অংশের পরিমান নির্ণয় কর \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্ত দ্বারা $y-$ অক্ষের খন্ডিত অংশের দৈর্ঘ্যের পরিমান \boxed{\textcolor{blue}{=2\sqrt{f^2-c}}}\\
+\begin{align*}
+x^2+y^2-6x+8y+9&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+x^2+y^2+2(-3)x+2(4)y+9&=0\\
+\\
+g=-3,\,\,\,f=4,\,\,\,&c=9	
+\end{align*}
+\\ 
+বৃত্ত দ্বারা $y-$ অক্ষের খন্ডিত অংশের দৈর্ঘ্যের পরিমান  $=2\sqrt{f^2-c}=2\sqrt{(4)^2-9}=2\sqrt{7}$\\
+\\ 
+\textcolor{blue}{[ঢাকা বোর্ড-২০২২]}\\
+$3x^2+3y^2-6x-9y-3=0$ বৃত্ত দ্বারা $x-$  অক্ষের খন্ডিত অংশের পরিমান নির্ণয় কর \\ 
+\\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্ত দ্বারা $x-$ অক্ষের খন্ডিত অংশের দৈর্ঘ্যের পরিমান \boxed{\textcolor{blue}{=2\sqrt{g^2-c}}}\\
+\begin{align*}
+	3x^2+3y^2-6x-9y-3&=0\\
+	\\
+		x^2+y^2-2x-3y-1&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2(-1)x+2\left(-\frac{3}{2}\right)y+(-1)&=0\\
+	\\
+	g=-1,\,\,\,f=\left(-\frac{3}{2}\right),\,\,\,&c=-1	
+\end{align*}
+\\ 
+বৃত্ত দ্বারা $x-$ অক্ষের খন্ডিত অংশের দৈর্ঘ্যের পরিমান  $=2\sqrt{g^2-c}=2\sqrt{(-1)^2-(-1)}=2\sqrt{2}$\\
+\textcolor{blue}{[CUET-2010-2011]}\\
+$k$ এর কোন মানের জন্য  $x^2+y^2+kx+2y+25=0$ বৃত্তটি $x-$ অক্ষকে স্পর্শ করে \\ 
+\\ 
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্তটি $x-$ অক্ষকে স্পর্শ করলে \boxed{\textcolor{blue}{g^2=c}}\\
+\\
+\begin{align*}
+x^2+y^2+kx+2y+25&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2\left(\frac{k}{2}\right)x+2\left(1\right)y+(25)&=0\\
+	\\
+	g=\frac{k}{2},\,\,\,f=\left(1\right),\,\,\,&c=25	
+\end{align*}
+\\
+বৃত্তটি $x-$ অক্ষকে স্পর্শ করলে \\
+$g^2=c$\\
+$\left(\frac{k}{2}\right)^2=25$\\
+$k^2=100$\\
+$k=\pm 10$\\
+\\ 
+\textcolor{blue}{[বরিশাল বোর্ড-২০২২]}\\
+যদি $x^2+y^2-12x+8y+c=0$ বৃত্তটি $x-$ অক্ষকে স্পর্শ করে তবে  $c$ এর মান নির্ণয় কর। স্পর্শ বিন্দুর স্থানাঙ্ক নির্ণয় কর। \\
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্তটি $x-$ অক্ষকে স্পর্শ করলে \boxed{\textcolor{blue}{g^2=c}}\\
+\\
+\begin{align*}
+x^2+y^2-12x+8y+c&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2\left(-6\right)x+2\left(4\right)y+c&=0\\
+	\\
+	g=-6,\,\,\,f=\left(4\right),\,\,\,&c=c
+\end{align*}
+\\
+বৃত্তটি $x-$ অক্ষকে স্পর্শ করলে \\
+$g^2=c$\\
+$(-6)^2=c$\\
+$c=36$\\
+\\
+বৃত্তের সমীকরণ  $x^2+y^2-12x+8y+36=0$\\
+ \\
+ $y=0$ বসিয়ে পাই \\
+ \\ 
+ $x^2-12x+36=0$\\
+ $(x-6)^2=0$\\
+ $x=6$\\ 
+ \\
+ স্পর্শ বিন্দুর স্থানাঙ্ক $(6,0)$\\
+ \\ 
+\textcolor{blue}{[সিলেট বোর্ড-২০২২]}\\
+যদি $x^2+y^2-4x-6y+c=0$ বৃত্তটি $y-$ অক্ষকে স্পর্শ করে তবে  $c$ এর মান নির্ণয় কর।স্পর্শ বিন্দুর স্থানাঙ্ক নির্ণয় কর। \\
+\\ 
+বৃত্তের সাধারণ সমীকরণ 
+\boxed{	
+	\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}}\\
+\\
+বৃত্তটি $y-$ অক্ষকে স্পর্শ করলে \boxed{\textcolor{blue}{f^2=c}}\\\\
+\\
+\begin{align*}
+	x^2+y^2-4x-6y+c&=0\\
+	[\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}]&\\
+	x^2+y^2+2\left(-2\right)x+2\left(-3\right)y+c&=0\\
+	\\
+	g=-2,\,\,\,f=\left(-3\right),\,\,\,&c=c
+\end{align*}
+\\
+বৃত্তটি $x-$ অক্ষকে স্পর্শ করলে \\
+$f^2=c$\\
+$(-3)^2=c$\\
+$c=9$\\
+\\
+বৃত্তের সমীকরণ  $x^2+y^2-4x-6y+9=0$\\
+\\
+$x=0$ বসিয়ে পাই \\
+\\ 
+$y^2-6y+9=0$\\
+$(y-3)^2=0$\\
+$y=3$\\ 
+\\
+স্পর্শ বিন্দুর স্থানাঙ্ক $(0,3)$\\
+\\ 
+\textcolor{blue}{[রাজশাহী বোর্ড-২০২২]}\\
+$x^2+y^2-4x-6y=7$ বৃত্ত দ্বারা $x-$  অক্ষের খন্ডিত অংশের পরিমান নির্ণয়  কর \\ 
+\\
+\textcolor{blue}{[যশোর বোর্ড-২০২২]}\\
+$x^2+y^2-2x+6y-6=0$ বৃত্ত দ্বারা $x-$  অক্ষের খন্ডিত অংশের দৈর্ঘ্য নির্ণয়  কর \\ 
+\\
+\textcolor{blue}{[দিনাজপুর বোর্ড-২০২২]}\\
+$x^2+y^2+4x-6y-1=0$ বৃত্ত দ্বারা $y-$  অক্ষের খন্ডিত অংশের পরিমান  কর \\ 
+\\
+\textcolor{blue}{[কুমিল্লা বোর্ড-২০২২]}\\
+$x^2+y^2-4x+8y=0$ বৃত্ত দ্বারা $y-$  অক্ষের খন্ডিত অংশের দৈর্ঘ্য নির্ণয়  কর \\ 
+\\
+\textcolor{blue}{বিশ্লেষণ ধর্মী আলোচনা ও প্রমাণ , ব্যাখ্যা }\\ 
+\\
+	কেন্দ্র $(h,k)$  ও ব্যাসার্ধ $r$ বিশিষ্ট বৃত্তের সমীকরণ \\ 
+\begin{align*}
+	(x-h)^2+(y-k)^2&=r^2\\
+	\\
+	x^2-2hx+h^2+y^2-2ky+k^2&=r^2\\
+	\\
+	x^2+y^2-2hx-2ky+(h^2+k^2-r^2)&=0\\
+	\\
+	x^2+y^2+2(-h)x+2(-k)y+(h^2+k^2-r^2)&=0\\
+	\\
+	x^2+y^2+2gx+2fy+c&=0
+\end{align*}
+\\
+ধরি,\\ 
+$-h=g,\,\,\Rightarrow h=-g$\\
+\\
+$-k=f,\,\,\Rightarrow k=-f$\\
+\\
+কেন্দ্র $(h,k)=(-g,-f)$\\
+\\ 
+ধরি,\\
+$c=h^2+k^2-r^2$\\
+\\
+$c=g^2+f^2-r^2$\\
+\\ 
+$r^2=g^2+f^2-c$\\
+\\ 
+ব্যাসার্ধ $r=\sqrt{g^2+f^2-c}$\\
+\\ 
+বৃত্তের সাধারণ সমীকরণ \\
+$\textcolor{blue}{x^2+y^2+2gx+2fy+c=0}$\\
+\\ 
+(i) এটি $x$, $y$ যুক্ত একটি দ্বিঘাত বহুপদী সমীকরণ \\
+(ii) $x^2$ এবং $y^2$ এর সহগ সমান\\
+(iii) $xy$ যুক্ত পদটি অনুপস্থিত। \\
+\\
+$c=0$ হলে বৃত্তটি মূলবিন্দু দিয়ে যাবে।\\
+\\ 
+\textcolor{blue}{কেন্দ্রের স্থানাঙ্ক	$(-g,-f)$}\\
+\\
+$g=0$ হলে কেন্দ্র $y-$অক্ষের উপর অবস্থিত\\
+\\
+$f=0$ হলে কেন্দ্র $x-$  অক্ষের উপর অবস্থিত\\ 
+\\ 
+\textcolor{blue}{ব্যাসার্ধ	$\sqrt{g^2+f^2-c}$}\\
+\\
+যদি $g^2+f^2-c=0$ হয়, তাহলে বৃত্তের ব্যাসার্ধ শূন্য হবে এবং এক্ষেত্রে বৃত্তটি  $(-g,-f)$ বিন্দুতে পরিনত হবে। এরুপ বৃত্তকে বিন্দু বৃত্ত বলে। \\
+\\ 
+\textcolor{red}{$x^2+y^2+2gx+2fy+c=0$, $(g^2>c\,\,\,f^2>c)$ বৃত্তটি দ্বারা অক্ষ দুইটি থেকে ছেদিত অংশের পরিমান নির্ণয় কর। }\\
+\\
+মনে করি, বৃত্তটি $x-$ অক্ষকে $(x_1,0)$ও $(x_2,0)$ বিন্দুতে ছেদ করে। \\
+\\
+বৃত্তের সাধারণ সমীকরণে $y=0$ বসিয়ে পাই $x^2+2gx+c=0$\\
+\\
+$x_1$ ও $x_2$ উপরের সমীকরণটির মূল হবে। \\
+\\
+মূলদ্বয়ের যোগফল $x_1+x_2=-2g$\\
+\\
+মূলদ্বয়ের গুনফল $x_1\,\,x_2=c$\\
+\\
+বৃত্তটি দ্বারা $x-$ অক্ষের ছেদিত অংশের পরিমান \\ 
+\begin{align*}
+	&|x_1-x_2|\\
+	\\
+	&=\sqrt{(x_1-x_2)^2}\\
+	\\
+	&=\sqrt{(x_1-x_2)^2-4x_1\,x_2}\\
+	\\
+	&=\sqrt{4g^2-4c}\\
+	\\
+	&=2\sqrt{g^2-c}	
+\end{align*} 
+\\
+বৃত্তের সাধারণ সমীকরণে $x=0$ বসিয়ে পাই $y^2+2fy+c=0$\\
+\\
+$y_1$ ও $y_2$ উপরের সমীকরণটির মূল হবে। \\
+\\
+মূলদ্বয়ের যোগফল $y_1+y_2=-2f$\\
+\\
+মূলদ্বয়ের গুনফল $y_1\,\,y_2=c$\\
+\\
+বৃত্তটি দ্বারা $y-$ অক্ষের ছেদিত অংশের পরিমান \\ 
+\begin{align*}
+	&|y_1-y_2|\\
+	\\
+	&=\sqrt{(y_1-y_2)^2}\\
+	\\
+	&=\sqrt{(y_1-y_2)^2-4y_1\,y_2}\\
+	\\
+	&=\sqrt{4f^2-4c}\\
+	\\
+	&=2\sqrt{f^2-c}	
+\end{align*} 
+বৃত্ত দ্বারা $x$ অক্ষের খন্ডিত অংশ	$2\sqrt{g^2-c}$\\
+\\
+বৃত্ত যদি $x-$ অক্ষকে স্পর্শ করে তবে $x-$ অক্ষের ছেদিত অংশের মান শূন্য হবে  \\
+$2\sqrt{g^2-c}=0$\\
+$g^2=c$\\
+\\
+বৃত্তটি  $x$ অক্ষকে স্পর্শ করলে  $g^2=c$\\
+\\
+বৃত্ত দ্বারা $y$ অক্ষের খন্ডিত অংশ	$2\sqrt{f^2-c}$\\
+\\
+বৃত্ত যদি $y-$ অক্ষকে স্পর্শ করে তবে $y-$ অক্ষের ছেদিত অংশের মান শূন্য হবে\\
+$2\sqrt{f^2-c}=0$\\
+$f^2=c$\\
+\\ 
+বৃত্তটি  $y$ অক্ষকে স্পর্শ করলে  $f^2=c$\\
+\\
+বৃত্তটি উভয় অক্ষকে স্পর্শ করলে 	$g^2=f^2=c$\\ 
+\end{document}
